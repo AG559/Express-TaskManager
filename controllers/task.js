@@ -24,7 +24,7 @@ const getSingleTask = async (req, res) => {
         if (!task) {
             return res.status(404).json({ message: `No Task with ID :${id}` })
         }
-        res.status(201).json(task);
+        res.status(201).json({ task });
     } catch (error) {
         res.status(400).json(error);
     }
@@ -50,7 +50,7 @@ const updateTask = async (req, res) => {
         if (!updateTask) {
             return res.status(404).json({ message: `No Task with this ID : ${id}` });
         }
-        res.status(201).json(updateTask);
+        res.status(201).json({ updateTask });
     } catch (error) {
         res.status(500).json(error);
     }
