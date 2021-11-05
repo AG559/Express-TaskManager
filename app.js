@@ -9,6 +9,9 @@ app.get('/', (req, res) => {
     res.send('Hello TeskManager');
 })
 app.use('/api/v1/tasks', taskRouter);
+app.use((req, res) => {
+    res.send('No Page Found');
+})
 const port = process.env.PORT || 5000;
 const start = async () => {
     await connectDb(process.env.MONGO_URL);
